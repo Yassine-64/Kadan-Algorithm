@@ -1,0 +1,25 @@
+Algorithm Kadane
+function kadaneAlgorithm(Array T: integer): integer
+
+    variable: i: integer
+             current_sum: integer
+             max_sum: integer
+
+Begin
+    current_sum <-- 0
+    max_sum <-- 0
+
+    For i <-- 0 to n - 1 step 1 do
+        current_sum <-- current_sum + T(i)
+        
+        If current_sum < 0 then
+            current_sum <-- 0
+        End If
+
+        If current_sum > max_sum then
+            max_sum <-- current_sum
+        End If
+    End For
+
+    Return max_sum
+End function
